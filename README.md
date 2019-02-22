@@ -1,4 +1,4 @@
-# Examen Java Dabarc -- Eduardo Luis Gonzalez Santiago
+# Examen Java Dabarc -- Eduardo Luis González Santiago
 Proyecto generador de permutaciones realizado en Spring Boot MVC
 ## Resumen
 Aplicación WEB generadora de permutaciones.
