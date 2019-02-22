@@ -1,0 +1,101 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Examen Eduardo González</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"/>
+        <link rel="stylesheet" th:href="@{/css/all.min.css}"/>
+        <link rel="stylesheet" th:href="@{/css/simple-line-icons.css}"/>
+        <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
+        <link rel="stylesheet" th:href="@{/css/dabarc.css}"/>
+    </head>
+    <body id="page-top">
+      <div th:replace="shared/header"></div>
+      <section class="features-icons bg-light text-center">
+          <div class="container-fluid">
+              <div class="row">
+                  <div class="col-xl-9 mx-auto">
+                      <h2 th:text="'Tabla de permutaciones '+ ${textPermuted}"></h2>
+                  </div>
+              </div>
+              <div class="col-xl-9 mx-auto">
+                  <h3 th:text="${numberpermutation} + ' permutaciones disponibles'"></h3>
+              </div>
+              <br>
+              <table id="permutationsTable" class="table table-striped">
+                  <thead>
+                  <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">Permutación</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+
+                  <tr th:each="permutedObject: ${permutedlist} ">
+                      <th scope="row" th:text="${permutedlist.indexOf(permutedObject) + 1 }"></th>
+                      <td th:text="${permutedObject}"></td>
+                  </tr>
+                  </tbody>
+              </table>
+          </div>
+      </section>
+      <section class="showcase">
+          <div class="container-fluid p-0">
+              <div class="row no-gutters">
+
+                  <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('https://previews.123rf.com/images/nomadsoul1/nomadsoul11512/nomadsoul1151200103/49820654-professor-in-glasses-thinking-about-math-formulas.jpg');"></div>
+                  <div class="col-lg-6 order-lg-1 my-auto showcase-text">
+                      <h2>¿Qué es una permutación?</h2>
+                      <p class="lead mb-0">
+                          Una permutación es una combinación en donde el orden es importante. La notación para permutaciones es P(n,r)
+                          que es la cantidad de permutaciones de “n” elementos si solamente se seleccionan “r”.
+                      </p>
+                  </div>
+              </div>
+              <div class="row no-gutters">
+                  <div class="col-lg-6 text-white showcase-img" style="background-image: url('https://www.thoughtco.com/thmb/X2DF4TwvexIjb_BMjcrXojchu_4=/768x0/filters:no_upscale():max_bytes(150000):strip_icc()/young-boy-writes-math-equations-on-chalkboard-168351254-5ad90020ba61770036501446.jpg');"></div>
+                  <div class="col-lg-6 my-auto showcase-text">
+                      <h2>Ejemplo de una permutación</h2>
+                      <p class="lead mb-0">
+                          El conjunto <b> {5,6,7} </b> puede ordenarse de diferentes formas, dando lugar a varias permutaciones.
+                          En concreto, este conjunto permite seis permutaciones:
+                          <b> {5,6,7}, {5,7,6}, {7,5,6}, {7,6,5}, {6,5,7}, {6,7,5} y {5,6,7}</b>
+                      </p>
+                  </div>
+              </div>
+              <div class="row no-gutters">
+                  <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('https://www.bbvaopenmind.com/wp-content/uploads/2016/05/Dupuy_-_La_vie_d%C3%89variste_Galois-page54-portrait.jpeg');"></div>
+                  <div class="col-lg-6 order-lg-1 my-auto showcase-text">
+                      <h2>Origen</h2>
+                      <p class="lead mb-0">
+                          Galois fue el primero en utilizar el término permutaciones en el contexto de las matemáticas y
+                          los grupos por los que comenzó a trabajar fueron los no abelianos, o sea aquéllos que no son conmutativos.
+                      </p>
+                  </div>
+              </div>
+          </div>
+      </section>
+
+      <footer>
+          <section class="call-to-action text-white text-center">
+              <div class="overlay"></div>
+              <div class="container">
+                  <div class="row">
+                      <div class="col-xl-9 mx-auto">
+                          <img src="http://dabarc.com/images/logo.png"  class="dabarc-logo" onclick="window.open('http://dabarc.com/')"alt="">
+                      </div>
+                  </div>
+              </div>
+              </div>
+          </section>
+      </footer>
+
+        <script type="text/javascript" th:src="@{/js/jquery.min.js}"></script>
+        <script type="text/javascript" th:src="@{/js/bootstrap.bundle.min.js}"></script>
+        <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <script type="text/javascript" th:src="@{/js/dabarc.js}"></script>
+
+    </body>
+</html>
